@@ -17,7 +17,7 @@ productRoutes.get("/products", getAllProducts);
 productRoutes.get("/products/:productId", getProductById);
 
 //CREAR UN PRODUCTO
-productRoutes.post("/products",verifyToken,isAdmin, createProduct);
+productRoutes.post("/products", verifyToken, isAdmin, createProduct);
 
 //ACTUALIZAR UN PRODUCTO
 productRoutes.put("/products/:productId", updateProduct);

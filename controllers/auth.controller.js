@@ -83,3 +83,16 @@ export const protect = async (req, res, next) => {
     return res.status(400).json({ message: "Error en el inicio de sesión" });
   }
 };
+
+
+//ELIMINAR UN USUARIO
+export const deleteUsuarioById = async (req, res) => {
+  const { usuarioId } = req.params;
+  try {
+    const deleteUsuario = await User.findByIdAndDelete(usuarioId);
+    res.status(200).json({ message: "Usuario  eliminado" });
+  }
+  catch (error) {
+    res.status(404).json({ message: "Error al eliminar un usuario" });
+  }
+};
