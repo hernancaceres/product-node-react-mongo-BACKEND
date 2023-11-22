@@ -6,6 +6,9 @@ import { authRouter } from "./routes/auth.routes.js";
 import { createRoles } from "./initial.setup.js";
 import {guardMiddleware} from "./middlewares/middlewares-guard.js"
 import cors from "cors";
+import { settingDotEnv } from "./config.js";
+
+const { port } = settingDotEnv();
 
 const app = express();
 createRoles();
@@ -18,7 +21,7 @@ app.use("/api/", authRouter);
 
 
 //servidor 
-const PORT = process.env.PORT || 5000;
+const PORT = port || 5000;
 app.listen(PORT, () => {
   console.log(`SERVER corriendo en: http://localhost:${PORT}`);
 });

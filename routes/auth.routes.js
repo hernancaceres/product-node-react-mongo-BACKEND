@@ -19,5 +19,5 @@ authRouter.get('/protected',verifyToken, isAdmin, protect, (req, res) => {
 //RUTA PARA BUSCAR TODOS LOS USUARIOS
 authRouter.get("/usuarios", getAllUsuarios);
 
-//ELIMINAR UN PRODUCTO
+//ELIMINAR UN USUARIO
 authRouter.delete("/usuarios/:usuarioId", deleteUsuarioById);
